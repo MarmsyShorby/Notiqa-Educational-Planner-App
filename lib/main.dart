@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'account_information.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,6 +8,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  static final List<AccountInformation> accounts = [];
 
   @override
   Widget build(BuildContext context) {

@@ -125,6 +125,8 @@ class _SelectNote extends State<SelectNote> {
 
                             SizedBox(width: 10), //PADDING-----------
                             //TRASH BUTTON-----------
+
+                            //ADD CONFIRMATION WHEN TAPPING TRASH TO BE DONE
                             IconButton(
                               icon: Icon(Icons.delete, color: Colors.red),
                               onPressed: () {
