@@ -15,18 +15,11 @@ class _SelectNote extends State<SelectNote> {
 
   bool get isNoteListEmpty => notes.isEmpty;
 
-  int _screenId = 1;
-  final List<Widget> _screens = [
-    Text("Notes"),
-    Text("Schedule"),
-    Text("Chart"),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add Note"),
+        title: const Text("Notes"),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
@@ -152,22 +145,6 @@ class _SelectNote extends State<SelectNote> {
             notes.add(Note(id: _noteId++));
           });
         },
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.content_paste),
-            label: "Notes",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: "Schedule",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.grid_view),
-            label: "Drawing Board",
-          ),
-        ],
       ),
     );
   }

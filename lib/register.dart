@@ -128,7 +128,7 @@ class _RegisterState extends State<Register> {
                       (ac) => ac.username == userController.text,
                     );
 
-                    final alrExistsEmal = MyApp.accounts.any(
+                    final alrExistsEmail = MyApp.accounts.any(
                       (ac) => ac.email == emailController.text,
                     );
 
@@ -143,7 +143,7 @@ class _RegisterState extends State<Register> {
                       return;
                     }
 
-                    if (alrExistsEmal) {
+                    if (alrExistsEmail) {
                       //show error
                       print("Email already exists!");
 
@@ -155,9 +155,9 @@ class _RegisterState extends State<Register> {
                     }
 
                     if (!emailController.text.contains("@") ||
-                        !emailController.text.contains(".com")) {
+                        !emailController.text.contains(".")) {
                       setState(() {
-                        errorMessage = "Enter a valid Email Address!";
+                        errorMessage = "Please Enter a valid Email Address!";
                         showError = true;
                       });
                       return;
@@ -168,13 +168,13 @@ class _RegisterState extends State<Register> {
                       print("Passwords not matching!");
 
                       setState(() {
-                        errorMessage = "Passwords not matching!";
+                        errorMessage = "Passwords are not matching!";
                         showError = true;
                       });
                       return;
                     }
 
-                    //WHEN SUCCESSFUL
+                    //WHEN SUCCESSFUL==================
                     final registeredAccont = AccountInformation(
                       username: userController.text,
                       email: emailController.text,

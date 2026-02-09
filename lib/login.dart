@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterapp/bottom_nav.dart';
 import 'package:flutterapp/main.dart';
 import 'select_note.dart';
 import 'register.dart';
@@ -43,9 +44,8 @@ class _LoginState extends State<Login> {
 
     if (account != null) {
       showError = false;
-      Navigator.push(context, MaterialPageRoute(builder: (_) => SelectNote()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => BottomNav()));
     } else {
-      print("Login Failed!");
       setState(() {
         showError = true;
       });
