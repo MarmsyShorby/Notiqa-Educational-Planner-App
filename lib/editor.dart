@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'note.dart';
 
+//TO DO:
+//Scroll title back to first word, stop scrolling when typing
+//
+
 class Editor extends StatefulWidget {
   final Note note;
   final Function(Note) onSave;
