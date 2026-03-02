@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutterapp/bottom_nav.dart';
 import 'package:flutterapp/main.dart';
-import 'select_note.dart';
+import 'package:flutterapp/select_note.dart';
 import 'register.dart';
 import 'account_information.dart';
 
@@ -44,7 +43,7 @@ class _LoginState extends State<Login> {
 
     if (account != null) {
       showError = false;
-      Navigator.push(context, MaterialPageRoute(builder: (_) => BottomNav()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => SelectNote()));
     } else {
       setState(() {
         showError = true;
