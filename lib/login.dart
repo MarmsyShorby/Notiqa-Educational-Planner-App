@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
 
     if (account != null) {
       showError = false;
-      Navigator.push(context, MaterialPageRoute(builder: (_) => SelectNote()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => BottomNav()));
     } else {
       setState(() {
         showError = true;

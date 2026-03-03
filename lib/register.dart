@@ -115,8 +115,6 @@ class _RegisterState extends State<Register> {
                     if (userController.text.isEmpty ||
                         emailController.text.isEmpty ||
                         passwordController.text.isEmpty) {
-                      print("All fields must be filled out!");
-
                       setState(() {
                         errorMessage = "All fields must be filled out!";
                         showError = true;
@@ -134,8 +132,6 @@ class _RegisterState extends State<Register> {
 
                     if (alrExistsUser) {
                       //show error
-                      print("Username already exists!");
-
                       setState(() {
                         errorMessage = "Username already exists!";
                         showError = true;
@@ -145,8 +141,6 @@ class _RegisterState extends State<Register> {
 
                     if (alrExistsEmail) {
                       //show error
-                      print("Email already exists!");
-
                       setState(() {
                         errorMessage = "Email Address already in use!";
                         showError = true;
