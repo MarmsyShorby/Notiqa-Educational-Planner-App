@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/select_note.dart';
-import 'scheduler.dart';
-import 'drawing_board.dart';
+import 'package:flutterapp/scheduler.dart';
+import 'package:flutterapp/drawing_board.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});

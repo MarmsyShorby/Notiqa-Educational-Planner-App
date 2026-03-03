@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/bottom_nav.dart';
 import 'package:flutterapp/main.dart';
-import 'package:flutterapp/select_note.dart';
-import 'register.dart';
-import 'account_information.dart';
+import 'package:flutterapp/register.dart';
+import 'package:flutterapp/account_information.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

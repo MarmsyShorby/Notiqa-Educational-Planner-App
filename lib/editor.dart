@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'note.dart';
+import 'package:flutterapp/note.dart';
 
 //TO DO:
 //Scroll title back to first word, stop scrolling when typing

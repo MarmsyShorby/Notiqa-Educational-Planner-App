@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'calendar_events.dart';
+import 'package:flutterapp/calendar_events.dart';
 
 class Scheduler extends StatefulWidget {
   const Scheduler({super.key});

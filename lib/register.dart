@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/main.dart';
-import 'account_information.dart';
+import 'package:flutterapp/account_information.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
