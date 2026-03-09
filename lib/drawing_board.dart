@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/account_information.dart';
+import 'package:flutterapp/menu_drawer.dart';
 
 /// ==========================
 /// Stroke Model
@@ -34,12 +36,12 @@ class DrawingBoard extends StatefulWidget {
 }
 
 class _DrawingBoardState extends State<DrawingBoard> {
-  List<DrawingStroke> strokes = [];
+  List<DrawingStroke> get strokes => currentAccountStorageData?.strokes ?? [];
+  List<StickyNote> get notes => currentAccountStorageData?.notes ?? [];
+
   List<DrawingStroke> undoStack = [];
 
   List<Offset> currentPoints = [];
-
-  List<StickyNote> notes = [];
 
   Color selectedColor = Colors.black;
   double brushSize = 4.0;
@@ -86,7 +88,18 @@ class _DrawingBoardState extends State<DrawingBoard> {
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         automaticallyImplyLeading: false,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(Icons.menu),
+            );
+          },
+        ),
       ),
+      drawer: accountDrawer(context),
       body: Column(
         children: [
           _buildToolbar(),

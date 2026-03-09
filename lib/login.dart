@@ -42,6 +42,7 @@ class _LoginState extends State<Login> {
 
     if (account != null) {
       showError = false;
+      login(account.username);
       Navigator.push(context, MaterialPageRoute(builder: (_) => BottomNav()));
     } else {
       setState(() {

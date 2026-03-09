@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/calendar_events.dart';
+import 'package:flutterapp/menu_drawer.dart';
 
 class Scheduler extends StatefulWidget {
   const Scheduler({super.key});
@@ -330,7 +331,18 @@ class _SchedulerState extends State<Scheduler> {
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         automaticallyImplyLeading: false,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(Icons.menu),
+            );
+          },
+        ),
       ),
+      drawer: accountDrawer(context),
       body: Column(
         children: [
           SizedBox(height: 10),

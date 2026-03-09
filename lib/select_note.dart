@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/menu_drawer.dart';
 import 'package:flutterapp/styled_folder.dart';
 import 'package:flutterapp/editor.dart';
 import 'package:flutterapp/note.dart';
 import 'package:flutterapp/folder.dart';
 import 'package:flutterapp/styled_note.dart';
 import 'package:flutterapp/folder_screen.dart';
+import 'account_information.dart';
 
 class SelectNote extends StatefulWidget {
   const SelectNote({super.key});
@@ -14,8 +16,8 @@ class SelectNote extends StatefulWidget {
 }
 
 class _SelectNoteState extends State<SelectNote> {
-  List<Folder> folders = [];
-  List<Note> looseNotes = [];
+  List<Folder> get folders => currentAccountStorageData?.folders ?? [];
+  List<Note> get looseNotes => currentAccountStorageData?.looseNotes ?? [];
 
   int _noteId = 1;
   int _folderId = 1;
@@ -29,7 +31,18 @@ class _SelectNoteState extends State<SelectNote> {
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         automaticallyImplyLeading: false,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(Icons.menu),
+            );
+          },
+        ),
       ),
+      drawer: accountDrawer(context),
       body: folders.isEmpty && looseNotes.isEmpty
           ? _buildEmptyState()
           : ListView(
